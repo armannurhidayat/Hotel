@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+type_kamar_manager,type_kamar_manager,model_management_type_kamar,,1,1,1,1
+kamar_manager,kamar_manager,model_management_kamar,,1,1,1,1
+fasilitas_manager,fasilitas_manager,model_management_fasilitas,,1,1,1,1

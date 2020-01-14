@@ -1,0 +1,11 @@
+<odoo>
+	<data>
+		
+		<record id="fasilitas_product_attribute" model="product.attribute">
+			<field name="name">Fasilitas</field>
+			<field name="create_variant">always</field>
+			<!-- <field name="value_ids.name">COBA</field> -->
+		</record>
+
+	</data>
+</odoo>

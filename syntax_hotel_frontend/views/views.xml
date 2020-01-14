@@ -1,0 +1,638 @@
+<odoo>
+  <data>
+    
+    <template id="index">
+      <html lang="en">
+
+        <!-- ============================ HEAD SECTION ============================ -->
+        <head>
+          <meta charset="utf-8" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <title t-field="company_id.name"/>
+          <!-- GOOGLE FONTS -->
+          <link href="/syntax_hotel_frontend/static/assets/css/fonts.css" rel="stylesheet" />
+          <!-- FLATICON -->
+          <link href="/syntax_hotel_frontend/static/assets/plugins/flaticon/font/flaticon.css" rel="stylesheet" />
+          <!-- ANIMATE CSS -->
+          <link href="/syntax_hotel_frontend/static/assets/css/animate.css" rel="stylesheet" />
+          <!-- VEGAS CSS -->
+          <link href="/syntax_hotel_frontend/static/assets/plugins/vegas/vegas.min.css" rel="stylesheet" />
+          <!-- OWL CAROUSEL -->
+          <link href="/syntax_hotel_frontend/static/assets/plugins/owl/owl.carousel.min.css" rel="stylesheet" />
+          <link href="/syntax_hotel_frontend/static/assets/plugins/owl/owl.theme.default.min.css" rel="stylesheet" />
+          <!-- BOOTSTRAP DATEPICKER -->
+          <link href="/syntax_hotel_frontend/static/assets/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+          <!-- BOOTSTRAP -->
+          <link href="/syntax_hotel_frontend/static/assets/css/bootstrap.min.css" rel="stylesheet" />
+          <!-- TEMPLATE STYLE -->
+          <link href="/syntax_hotel_frontend/static/assets/css/style.css" rel="stylesheet" />
+        </head>
+
+        <!-- ============================ BODY SECTION ============================ -->
+        <body>
+
+          <div id="page-loader">
+            <div class="spinner">
+              <div class="bounce1"></div>
+              <div class="bounce2"></div>
+              <div class="bounce3"></div>
+            </div>
+          </div>
+
+          <div class="site-wrapper">
+            <div class="site-header">
+              <div class="container">
+                <div id="top-header" class="row hidden-xs hidden-sm hidden-md">
+                  <div class="col-md-6">
+                    <span><i class="flaticon-mail"></i> <span t-field="company_id.email"/></span>
+                    <span><i class="flaticon-technology"></i> <span t-field="company_id.phone"/></span>
+                  </div>
+                  <div class="col-md-6 text-right">
+                    <ul id="social-media-header">
+                      <li t-if="company_id.social_twitter"><a target="_blank" t-att-href="company_id.social_twitter" class="flaticon-twitter-circular-button"></a></li>
+                      <li t-if="company_id.social_facebook"><a target="_blank" t-att-href="company_id.social_facebook" class="flaticon-facebook-logo-in-circular-button-outlined-social-symbol"></a></li>
+                      <li t-if="company_id.social_linkedin"><a target="_blank" t-att-href="company_id.social_linkedin" class="flaticon-linkedin"></a></li>
+                      <li t-if="company_id.social_instagram"><a target="_blank" t-att-href="company_id.social_instagram" class="flaticon-instagram"></a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- ============================ MAIN HEADER ============================ -->
+                <div id="main-header" class="row">
+                  <div class="col-md-4 col-xs-9">
+                    <a href="#" class="site-title underline">Syntax <span class="colored normal">Hotel</span></a>
+                  </div>
+                  <div class="col-md-8 col-xs-12 text-right hidden-xs hidden-sm">
+                    <ul id="main-nav">
+                      <li><a href="#home" class="smooth-scroll animated-underline">Home</a></li>
+                      <li><a href="#rooms" class="smooth-scroll animated-underline">Rooms</a></li>
+                      <li><a href="#dining" class="smooth-scroll animated-underline">Dining</a></li>
+                      <li><a href="#meetings-and-events" class="smooth-scroll animated-underline">Meetings &amp; Events</a></li>
+                      <li><a href="#about" class="smooth-scroll animated-underline">About</a></li>
+                      <li><a href="#contact-us" class="smooth-scroll animated-underline">Contact Us</a></li>
+                      <li><a href="#" class="button" data-toggle="modal" data-target="#booking-form-modal">Book Now</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-xs-3 hidden-md hidden-lg">
+                    <a href="#" id="mobile-menu-btn" class="pull-right"><i class="flaticon-bars"></i></a>
+                    <div id="mobile-menu">
+                      <a href="#" id="close-mobile-menu-btn"><i class="flaticon-cross-out"></i> Close</a>
+                      <ul>
+                        <li><a href="#home" class="smooth-scroll">Home</a></li>
+                        <li><a href="#rooms" class="smooth-scroll">Rooms</a></li>
+                        <li><a href="#dining" class="smooth-scroll">Dining</a></li>
+                        <li><a href="#meetings-and-events" class="smooth-scroll">Meetings &amp; Events</a></li>
+                        <li><a href="#about" class="smooth-scroll">About</a></li>
+                        <li><a href="#contact-us" class="smooth-scroll">Contact Us</a></li>
+                      </ul>
+                      <a href="#" class="button large expand" data-toggle="modal" data-target="#booking-form-modal">Book Now</a>
+                    </div>
+                    <div id="mobile-menu-overlay"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- ============================ HOME ============================ -->
+            <section id="home" class="hero">
+              <div class="hero-inner container text-center">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <h1 class="title invisible">Syntax <span class="colored light">Hotel</span></h1>
+                    <p class="description invisible">Ingin mencari hotel Murah dan Nyaman ? disini tempatnya</p>
+                    <a href="#rooms" id="hero-book-now" class="button ghost round large invisible smooth-scroll">Scroll Down</a>
+                  </div>
+                </div>
+              </div>
+              <div class="dark-overlay"></div>
+            </section>
+
+
+            <!-- ============================ ROOMS ============================ -->
+            <section id="rooms" class="white-space-5 light-bg">
+              <div class="container">
+                <div class="row waypoint" data-animate="slideInLeft" data-offset="70">
+                  <div class="col-xs-12 col-md-6 col-md-offset-3 white-space-2 text-center">
+                    <h6 class="light grey uppercase letter-spacing">Stay with us, and feel like home.</h6>
+                    <h2 class="light dark-grey underline uppercase">Accomodations</h2>
+                  </div>
+                </div>
+                <div class="row waypoint" data-offset="70">
+                  <div class="col-xs-12">
+                    <ul class="filter-rooms text-center">
+                      <li data-filter="1" class="filter-room-btn active">All</li>
+                      <li data-filter="2" class="filter-room-btn">Twin</li>
+                      <li data-filter="3" class="filter-room-btn">Double</li>
+                      <li data-filter="4" class="filter-room-btn">Deluxe</li>
+                      <li data-filter="5" class="filter-room-btn">Suite</li>
+                    </ul>
+                    <div class="filtr-container row text-center">
+                      <div class="filtr-item col-md-3 col-sm-6" data-category="1, 4" t-foreach="rooms" t-as="room">
+                        <div class="white-space-2 room-box">
+                          <div class="room-image">
+                            <a href="#" data-toggle="modal" data-target="#room-details-modal"><i class="flaticon-search"></i></a>
+                            <img class="img-responsive" src="syntax_hotel_frontend/static/assets/images/rooms/deluxe.jpg" alt="room-image" />
+                          </div>
+                          <h4 class="room-type"><span t-field="room.type_kamar_id"/></h4>
+                          <p class="light">Enim similique excepturi odit facere temporibus aliquid reiciendis asperiores voluptatum repudiandae labore itaque quae laboriosam.</p>
+                          <button class="button dark large" data-toggle="modal" data-target="#room-details-modal">View Details</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+
+            <!-- ============================ DINING ============================ -->
+            <section id="dining" class="white-space-5">
+              <div class="container">
+                <div class="row">
+                  <div class="col-xs-12 col-md-6 col-md-offset-3 white-space-2 text-center">
+                    <h6 class="light grey uppercase letter-spacing">We don’t make it until you order it.</h6>
+                    <h2 class="light dark-grey underline uppercase">Dining</h2>
+                  </div>
+                </div>
+                <div class="white-space-3"></div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <img src="syntax_hotel_frontend/static/assets/images/dining/breakfast.jpg" class="img-responsive" alt="dining" />
+                    <div class="white-space-2"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <h2 class="colored">Breakfast</h2>
+                    <p class="light">Ask her how her day was. File not found. You guys go on without me! I'm going to go… look for more stuff to steal! It's just like the story of the grasshopper and the octopus. All year long, the grasshopper kept burying acorns for winter, while the octopus mooched off his girlfriend and watched TV. But then the winter came, and the grasshopper died, and the octopus ate all his acorns. Also he got a race car. Is any of this getting through to you?</p>
+                    <a href="#" class="button large">Breakfast Menu</a>
+                  </div>
+                </div>
+                <div class="white-space-5"></div>
+                <div class="row">
+                  <div class="col-md-6 col-md-push-6">
+                    <img src="syntax_hotel_frontend/static/assets/images/dining/lunch.jpg" class="img-responsive" alt="dining" />
+                    <div class="white-space-2"></div>
+                  </div>
+                  <div class="col-md-6 col-md-pull-6">
+                    <h2 class="colored">Lunch</h2>
+                    <p class="light">Ask her how her day was. File not found. You guys go on without me! I'm going to go… look for more stuff to steal! It's just like the story of the grasshopper and the octopus. All year long, the grasshopper kept burying acorns for winter, while the octopus mooched off his girlfriend and watched TV. But then the winter came, and the grasshopper died, and the octopus ate all his acorns. Also he got a race car. Is any of this getting through to you?</p>
+                    <a href="#" class="button large">Lunch Menu</a>
+                  </div>
+                </div>
+                <div class="white-space-5"></div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <img src="syntax_hotel_frontend/static/assets/images/dining/dinner.jpg" class="img-responsive" alt="dining" />
+                    <div class="white-space-2"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <h2 class="colored">Dinner</h2>
+                    <p class="light">Ask her how her day was. File not found. You guys go on without me! I'm going to go… look for more stuff to steal! It's just like the story of the grasshopper and the octopus. All year long, the grasshopper kept burying acorns for winter, while the octopus mooched off his girlfriend and watched TV. But then the winter came, and the grasshopper died, and the octopus ate all his acorns. Also he got a race car. Is any of this getting through to you?</p>
+                    <a href="#" class="button large">Dinner Menu</a>
+                  </div>
+                </div>
+              </div>
+              <div class="white-space-3"></div>
+            </section>
+
+
+            <!-- ============================ MEETINGS & EVENTS ============================ -->
+            <section id="meetings-and-events" style="background-image: url('syntax_hotel_frontend/static/assets/images/rooms/meeting-room.jpg')">
+              <div class="dark-overlay"></div>
+              <div class="container">
+                <div class="row text-center">
+                  <div class="col-xs-12 waypoint" data-animate="fadeInDown" data-offset="60">
+                    <h5 class="light uppercase white">Meetings &amp; events</h5>
+                    <h1 class="title white">Be a <span class="normal colored">guest</span> <br/>at your own <span class="normal">event</span></h1>
+                  </div>
+                </div>
+                <div class="row text-center white-space-2 waypoint" data-offset="70">
+                  <div class="col-xs-6 col-sm-4 col-xs-offset-3 col-sm-offset-0 white-space-2">
+                    <h4 class="light white underline uppercase">Conference</h4>
+                    <p class="white description">Accusantium, sapiente sed minus sit amet, consectetur adipisici.</p>
+                    <a href="#contact-us" class="button ghost large round smooth-scroll">Inquiry</a>
+                  </div>
+                  <div class="col-xs-6 col-sm-4 col-xs-offset-3 col-sm-offset-0 white-space-2">
+                    <h4 class="light white underline uppercase">Business Meetings</h4>
+                    <p class="white description">Accusantium, sapiente sed minus sit amet, consectetur adipisici.</p>
+                    <a href="#contact-us" class="button ghost large round smooth-scroll">Inquiry</a>
+                  </div>
+                  <div class="col-xs-6 col-sm-4 col-xs-offset-3 col-sm-offset-0 white-space-2">
+                    <h4 class="light white underline uppercase">Events</h4>
+                    <p class="white description">Accusantium, sapiente sed minus sit amet, consectetur adipisici.</p>
+                    <a href="#contact-us" class="button ghost large round smooth-scroll">Inquiry</a>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+
+            <!-- ============================ ABOUT ============================ -->
+            <section id="about" class="white-space-5">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h1 class="title white-space-7">
+                      The <span class="normal dark-grey">right way</span><br/>
+                      The <span class="normal colored">aurelia way</span><br/>
+                    </h1>
+                  </div>
+                  <div class="col-md-6">
+                    <h4 class="light underline uppercase">About</h4>
+                    <p class="light"><span t-raw="company_id.about"/></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="row white-space-2">
+                      <div class="col-xs-6">
+                        <img src="syntax_hotel_frontend/static/assets/images/about/beach-hut.jpg" class="img-responsive" alt="about-image" />
+                      </div>
+                      <div class="col-xs-6">
+                        <img src="syntax_hotel_frontend/static/assets/images/about/dining.jpg" class="img-responsive" alt="about-image" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <img src="syntax_hotel_frontend/static/assets/images/about/dining.jpg" class="img-responsive" alt="about-image" />
+                      </div>
+                      <div class="col-xs-6">
+                        <img src="syntax_hotel_frontend/static/assets/images/about/room.jpg" class="img-responsive" alt="about-image" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <h4 class="light underline uppercase white-space-2">History</h4>
+                    <p class="light"><span t-raw="company_id.history"/></p>
+                    <a href="#" class="button">Read More</a>
+                  </div>
+                </div>
+                <div class="white-space-3"></div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <h1 class="title white-space-7">
+                      Every great <span class="normal dark-grey">business</span><br/>
+                      is built on <span class="normal colored">friendship</span><br/>
+                    </h1>
+                  </div>
+                  <div class="col-md-6">
+                    <h4 class="light underline uppercase">Customer Reviews</h4>
+                    <div class="owl-carousel owl-theme">
+                      <div class="white-space-2">
+                        <span class="light">Grace Wright</span>
+                        <br/>
+                        <span class="flaticon-shape tiny-icon"></span>
+                        <span class="flaticon-shape tiny-icon"></span>
+                        <span class="flaticon-shape tiny-icon"></span>
+                        <span class="flaticon-shape tiny-icon"></span>
+                        <span class="flaticon-shape tiny-icon"></span>
+                        <br/><br/>
+                        <p>Best experience ever!!!</p>
+                        <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, est, adipisci. Minus maxime vitae, et amet dicta. Provident vel architecto ipsa natus expedita beatae sed aliquid aspernatur, praesentium autem nemo.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis numquam non quas ex at quod, ut, et cumque fugiat repellendus quae iusto reiciendis. Ratione accusamus, eligendi dolores, laboriosam beatae vitae.</p>
+                      </div>
+                      <div class="white-space-2">
+                        <span class="light">Steve Young</span>
+                        <br/>
+                        <span class="flaticon-shape tiny-icon"></span>
+                        <span class="flaticon-shape tiny-icon"></span>
+                        <span class="flaticon-shape tiny-icon"></span>
+                        <span class="flaticon-shape tiny-icon"></span>
+                        <span class="flaticon-shape tiny-icon"></span>
+                        <br/><br/>
+                        <p>Great Food, Great Stay!</p>
+                        <p class="light">Adipisci. Minus maxime vitae, et amet dicta. Provident vel architecto ipsa natus expedita beatae sed aliquid aspernatur, praesentium autem nemo.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis numquam non quas ex at quod, ut, et cumque fugiat repellendus quae iusto reiciendis. Ratione accusamus, eligendi dolores, laboriosam beatae vitae.</p>
+                      </div>
+                      <div class="white-space-2">
+                        <span class="light">Kate Lee Adams</span>
+                        <br/>
+                        <span class="flaticon-shape tiny-icon"></span>
+                        <span class="flaticon-shape tiny-icon"></span>
+                        <span class="flaticon-shape tiny-icon"></span>
+                        <span class="flaticon-shape tiny-icon"></span>
+                        <span class="flaticon-shape-2 tiny-icon"></span>
+                        <br/><br/>
+                        <p>Had a great time with my family</p>
+                        <p class="light">Consectetur adipisicing elit. Nisi, est, adipisci. raesentium autem nemo.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis numquam non quas ex at quod, ut, et cumque fugiat repellendus quae iusto reiciendis. Ratione accusamus, eligendi dolores, laboriosam beatae vitae.</p>
+                      </div>
+                      <div class="white-space-2">
+                        <span class="light">Jessica Williams</span>
+                        <br/>
+                        <span class="flaticon-shape tiny-icon"></span>
+                        <span class="flaticon-shape tiny-icon"></span>
+                        <span class="flaticon-shape tiny-icon"></span>
+                        <span class="flaticon-shape tiny-icon"></span>
+                        <span class="flaticon-shape-1 tiny-icon"></span>
+                        <br/><br/>
+                        <p>Nice place, great food!</p>
+                        <p class="light">Perferendis qui architecto, quos nesciunt, iusto earum labore dolores vel, ducimus nulla dolorum. Voluptas, hic! Distinctio dolorum, dolorem ipsam blanditiis, repellendus necessitatibus.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad quod soluta, fugit sit enim assumenda nihil veniam harum fugiat molestiae. Veniam est nam voluptates quam officia quisquam, nobis odio pariatur!</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+
+            <!-- ============================ CONTACT US ============================ -->
+            <section id="contact-us" class="white-space-5 light-bg">
+              <div class="container">
+                <div class="row">
+                  <div class="col-xs-12 col-md-6 col-md-offset-3 white-space-2 text-center">
+                    <h6 class="light grey uppercase letter-spacing">Get in touch</h6>
+                    <h2 class="light dark-grey underline uppercase">Contact Us</h2>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <p class="light text-center-xs text-center-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt sit, similique neque, ratione temporibus.</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <h4 class="white-space-2 colored">Main Office</h4>
+                        <ul class="list-unstyled">
+                          <li><i class="flaticon-technology"></i> <span t-field="company_id.phone"/></li>
+                          <li><i class="flaticon-mail"></i> <span t-field="company_id.email"/></li>
+                          <li><i class="flaticon-location-pin"></i> <span t-field="company_id.street"/>&#160;<span t-field="company_id.city"/></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12 white-space-2">
+                        <ul id="social-media-contact" class="list-inline">
+                          <li t-if="company_id.social_twitter"><a target="_blank" t-att-href="company_id.social_twitter" class="flaticon-twitter-circular-button"></a></li>
+                          <li t-if="company_id.social_facebook"><a target="_blank" t-att-href="company_id.social_facebook" class="flaticon-facebook-logo-in-circular-button-outlined-social-symbol"></a></li>
+                          <li t-if="company_id.social_linkedin"><a target="_blank" t-att-href="company_id.social_linkedin" class="flaticon-linkedin"></a></li>
+                          <li t-if="company_id.social_instagram"><a target="_blank" t-att-href="company_id.social_instagram" class="flaticon-instagram"></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <h4 class="colored uppercase"><i class="flaticon-edit"></i> Leave a Message</h4>
+                    <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic earum, nulla enim.</p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" name="name" class="form-control" placeholder="Your Name" />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="email" name="email" class="form-control" placeholder="Email" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" name="contact-number" class="form-control" placeholder="Contact Number" />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <input type="text" name="subject" class="form-control" placeholder="Subject" />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <textarea name="message" class="form-control" rows="7" placeholder="Message"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <button class="button large dark">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.9113917673058!2d107.6506557503634!3d-6.901199869430532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e793de612d21%3A0xedddb3050d331954!2sVitraining.com!5e0!3m2!1sid!2sid!4v1578574433763!5m2!1sid!2sid" width="1521" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+          </div>
+
+          <!-- ============================ MODALS ============================ -->
+          <div class="modal fade" id="room-details-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="flaticon-cross-out"></span></button>
+                  <h4 class="modal-title light">Aurelia Hotel - Deluxe A</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-md-5">
+                      <div id="room-images" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                          <li data-target="#room-images" data-slide-to="0" class="active"></li>
+                          <li data-target="#room-images" data-slide-to="1"></li>
+                          <li data-target="#room-images" data-slide-to="2"></li>
+                          <li data-target="#room-images" data-slide-to="3"></li>
+                        </ol>
+
+                        <div class="carousel-inner" role="listbox">
+                          <div class="item active">
+                            <img src="syntax_hotel_frontend/static/assets/images/rooms/deluxe.jpg" alt="rooms-carousel" />
+                          </div>
+                          <div class="item">
+                            <img src="syntax_hotel_frontend/static/assets/images/rooms/deluxe.jpg" alt="rooms-carousel" />
+                          </div>
+                          <div class="item">
+                            <img src="syntax_hotel_frontend/static/assets/images/rooms/double.jpg" alt="rooms-carousel" />
+                          </div>
+                          <div class="item">
+                            <img src="syntax_hotel_frontend/static/assets/images/rooms/double2.jpg" alt="rooms-carousel" />
+                          </div>
+                        </div>
+
+                      <a class="left carousel-control" href="#room-images" role="button" data-slide="prev">
+                        <span class="arrow flaticon-back" aria-hidden="true"></span>
+                      </a>
+                      <a class="right carousel-control" href="#room-images" role="button" data-slide="next">
+                        <span class="arrow flaticon-next" aria-hidden="true"></span>
+                      </a>
+                      </div>
+                      <div class="white-space-2"></div>
+                    </div>
+                    <div class="col-md-7">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <h2>$374.82<small>/night</small></h2>
+                          <p class="light">Breakfast Included</p>
+                        </div>
+                        <div class="col-sm-6">
+                          <button class="button ghost white hotel-book-now" data-toggle="modal" data-target="#booking-form-modal">Book Now</button>
+                        </div>
+                      </div>
+                      <div class="white-space-2"></div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h4>Room Amenities</h4>
+                          <p class="light">Air conditioning, Balcony, Bathroom, Desk, Flat screen TV, Hair dryer, Minibar, Refrigerator, Shower, Toilet, Towels</p>
+                          <div class="white-space-2"></div>
+                        </div>
+                        <div class="col-md-6">
+                          <h4 class="">Max Occupancy</h4>
+                          <span class="flaticon-man-silhouette"></span>
+                          <span class="flaticon-man-silhouette"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="white-space-2"></div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <h4>Description</h4>
+                      <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dolore saepe itaque rerum iusto, modi ipsum deserunt qui aliquam, accusantium quasi tempore nam quam sapiente cum laudantium maiores. Consectetur, vero.</p>
+                    </div>
+                  </div>
+                  <div class="white-space-2"></div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <h4>Payment Terms</h4>
+                      <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam adipisci accusamus unde omnis qui sint at perspiciatis expedita deleniti maxime odio velit deserunt, reiciendis suscipit id maiores, hic dicta rerum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum quibusdam nihil voluptatum aliquam voluptates laboriosam magni commodi impedit nulla, neque officia sequi facere, dignissimos magnam vero ratione non eveniet tempora!</p>
+                    </div>
+                  </div>
+                  <div class="white-space-2"></div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <h4>Cancellation Policy</h4>
+                      <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae fugit ipsum natus neque numquam debitis quis, nihil. Sint laborum porro, perspiciatis illum, pariatur obcaecati quia aliquam officia consequatur voluptatibus impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, ducimus cumque nulla. Voluptatem eligendi nihil laborum cupiditate adipisci aliquam temporibus voluptatibus quo blanditiis aperiam quaerat, expedita, magni voluptates delectus at.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="booking-form-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="flaticon-cross-out"></span></button>
+                  <h4 class="modal-title light" ><span class="flaticon-calendar"></span> Booking Form</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    <form>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="First Name" />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Last Name" />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Email Address" />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Phone Number" />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Arrival" data-provide="datepicker" />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Departure" data-provide="datepicker" />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <select class="form-control">
+                            <option>Adults</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <select class="form-control">
+                            <option>Children</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <select class="form-control">
+                            <option>Room</option>
+                            <option>Deluxe A</option>
+                            <option>Deluxe B</option>
+                            <option>Twin</option>
+                            <option>Double A</option>
+                            <option>Double B</option>
+                            <option>Double C</option>
+                            <option>Suite</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <select class="form-control">
+                            <option>Include Lunch</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <textarea style="resize: vertical;" class="form-control" placeholder="Special Requests"></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox" /> <span class="light">I agree to the Terms &amp; Conditions</span>
+                            </label>
+                          </div>
+                          <a href="#." class="button ghost white">Confirm and Book</a>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============================ JAVASCRIPT ============================ -->
+          <script src="/syntax_hotel_frontend/static/assets/js/jquery.min.js"></script>
+          <script src="/syntax_hotel_frontend/static/assets/js/jquery-ui.min.js"></script>
+          <!-- BOOTSTRAP DATEPICKER -->
+          <script src="/syntax_hotel_frontend/static/assets/js/bootstrap-datepicker.min.js"></script>
+          <!-- BOOTSTRAP -->
+          <script src="/syntax_hotel_frontend/static/assets/js/bootstrap.min.js"></script>
+          <!-- VEGAS BACKGROUND SLIDESHOW -->
+          <script src="/syntax_hotel_frontend/static/assets/plugins/vegas/vegas.min.js"></script>
+          <!-- OWL CAROUSEL -->
+          <script src="/syntax_hotel_frontend/static/assets/plugins/owl/owl.carousel.min.js"></script>
+          <!-- FILTERIZR -->
+          <script src="/syntax_hotel_frontend/static/assets/plugins/filterizr/jquery.filterizr.min.js"></script>
+          <!-- WAYPOINTS -->
+          <script src="/syntax_hotel_frontend/static/assets/plugins/waypoints/jquery.waypoints.min.js"></script>
+          <!-- AURELIA JS -->
+          <script src="/syntax_hotel_frontend/static/assets/js/aurelia.js"></script>
+        </body>
+
+      </html>
+    </template>
+
+  </data>
+</odoo>

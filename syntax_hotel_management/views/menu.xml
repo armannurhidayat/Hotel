@@ -1,0 +1,71 @@
+<odoo>
+  <data>
+
+	<!-- ========================== ACTION LIST ========================== -->
+    <record id="action_type_kamar_list" model="ir.actions.act_window">
+        <field name="name">Daftar Type Kamar</field>
+        <field name="res_model">management.type_kamar</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create"> Click to create a Type Kamar </p>
+            <p>klik tombol create untuk membuat Type Kamar baru</p>
+        </field>
+    </record>
+
+    <record id="action_fasilitas_list" model="ir.actions.act_window">
+        <field name="name">Daftar Fasilitas</field>
+        <field name="res_model">management.fasilitas</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create"> Click to create a Fasilitas </p>
+            <p>klik tombol create untuk membuat Fasilitas baru</p>
+        </field>
+    </record>
+
+    <record id="action_kamar_list" model="ir.actions.act_window">
+        <field name="name">Daftar Kamar</field>
+        <field name="res_model">management.kamar</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create"> Click to create a Kamar </p>
+            <p>klik tombol create untuk membuat Kamar baru</p>
+        </field>
+    </record>
+
+
+    <!-- ========================== MENU ITEM ========================== -->
+    <menuitem id="management_0"
+    name="Management Hotel"
+    sequence="20"/>
+
+    <menuitem id="management_1"
+    name="Management Hotel"
+    parent="management_0"
+    sequence="20"/>
+
+    <menuitem id="dashboard_0"
+    name="Dashboard"
+    parent="management_0"
+    sequence="20"/>
+
+    <menuitem id="menu_management_type_kamar"
+    name="Type Kamar"
+    parent="dashboard_0"
+    action="action_type_kamar_list"
+    sequence="30"/>
+
+    <menuitem id="menu_management_fasilitas"
+    name="Fasilitas"
+    parent="dashboard_0"
+    action="action_fasilitas_list"
+    sequence="40"/>
+
+    <menuitem id="menu_management_kamar"
+    name="Kamar"
+    parent="dashboard_0"
+    action="action_kamar_list"
+    sequence="50"/>
+
+
+  </data>
+</odoo>

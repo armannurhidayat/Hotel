@@ -1,0 +1,40 @@
+<odoo>
+	<data>
+		
+		<!-- Tree Management Fasilitas Kamar -->
+		<record id="view_management_fasilitas_kamar_tree" model="ir.ui.view">
+			<field name="name">view_management_fasilitas_kamar_tree</field>
+			<field name="model">management.fasilitas</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="8"/>
+
+			<field name="arch" type="xml">
+				<tree string="Fasilitas Kamar">
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+
+
+		<!-- Form Management Fasilitas Kamar -->
+		<record id="view_management_fasilitas_kamar_form" model="ir.ui.view">
+			<field name="name">view_management_fasilitas_kamar_form</field>
+			<field name="model">management.fasilitas</field>
+			<field name="type">form</field>
+			<field name="priority" eval="8"/>
+
+			<field name="arch" type="xml">
+				<form string="Fasilitas Kamar">
+					<sheet>
+						<div class="oe_title">
+							<h1>
+								<field name="name"/>
+							</h1>
+						</div>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+	</data>
+</odoo>

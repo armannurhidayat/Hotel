@@ -1,0 +1,637 @@
+/*===================================================================================================
+	MAIN CSS FILE
+
+	[TABLE OF CONTENTS]
+	01. GENERAL
+	02. TYPOGRAPHY
+	03. BUTTONS
+	04. HEADER
+	05. HERO
+	06. ROOMS
+	07. CONTACT US
+	08. MEDIA QUERIES
+
+	[COLORS]
+	#ef5350 RED
+	#f44336 RED 2
+	#f8f8f8 WHITE
+	#F4F4F4 WHITE 2
+	#848484 GREY
+	#474747 DARK GREY
+===================================================================================================*/
+
+/*===================================================================================================
+	01. GENERAL
+===================================================================================================*/
+html, body {
+	font-family: 'Roboto', sans-serif;
+	background: #f8f8f8;
+}
+.site-wrapper {
+	position: relative;
+	min-height: 100%;
+}
+[class^="flaticon-"]:before,
+[class*=" flaticon-"]:before,
+[class^="flaticon-"]:after,
+[class*=" flaticon-"]:after {
+	margin-left: 0;
+}
+/* MODAL */
+.modal-header {
+	background: #ef5350;
+	color: #f8f8f8;
+}
+.modal-header .close {
+	color: #e5e5e5;
+	line-height: 26px;
+	opacity: 1;
+	text-shadow: none;
+	outline: none;
+	transition: all .24s ease-in-out 0s;
+}
+.modal-header .close:hover {
+	color: #f8f8f8;
+}
+.modal-body {
+	padding: 3rem;
+}
+.datepicker-days thead tr th.dow {
+	padding: 10px;
+}
+/* Form Control */
+.form-control {
+	border-radius: 2px;
+	font-size: 11px;
+	height: 45px;
+}
+.form-control:focus {
+	box-shadow: none;
+}
+/* Loader */
+#page-loader {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	background: #ffffff;
+}
+.spinner {
+	margin: auto;
+	width: 70px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.spinner > div {
+	width: 20px;
+	height: 20px;
+	background-color: #ef5350;
+
+	border-radius: 100%;
+	display: inline-block;
+	-webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+	animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+	-webkit-animation-delay: -0.32s;
+	animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+	-webkit-animation-delay: -0.16s;
+	animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+	0%, 80%, 100% { -webkit-transform: scale(0) }
+	40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% { 
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
+
+/* Paddings and Margins */
+.white-space-7 {
+	padding-top: 7rem;
+	padding-bottom: 7rem;
+}
+.white-space-5 {
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+}
+.white-space-3 {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+.white-space-2 {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+.light-bg {
+	background: #f2f2f2;
+}
+
+/*===================================================================================================
+	02. TYPOGRAPHY
+===================================================================================================*/
+h1, h2, h3, h4, h5, h6 {
+	margin: 1rem 0;
+}
+a {
+	text-decoration: none !important;
+}
+p {
+	line-height: 1.7em;
+	font-size: 15px;
+}
+.uppercase {
+	text-transform: uppercase;
+}
+.underline,
+.animated-underline {
+	position: relative;
+	text-decoration: none;
+	padding-bottom: 1rem;
+	display: inline-block;
+}
+.underline:before {
+	content: "";
+	position: absolute;
+	width: 86%;
+	height: 2px;
+	bottom: 0;
+	left: 7%;
+	background-color: #ef5350;
+}
+.animated-underline:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: #ef5350;
+	visibility: hidden;
+	-webkit-transform: scaleX(0);
+	transform: scaleX(0);
+	-webkit-transition: all .24s ease-in-out 0s;
+	transition: all .24s ease-in-out 0s;
+}
+.animated-underline:hover:before {
+	visibility: visible;
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
+.colored {
+	color: #ef5350;
+}
+.white {
+	color: #f8f8f8;
+}
+.thin {
+	font-weight: 100;
+}
+.light {
+	font-weight: 300;
+}
+.bold {
+	font-weight: 700;
+}
+.normal {
+	font-weight: 400;
+}
+.letter-spacing {
+	letter-spacing: 1px;
+}
+.grey {
+	color: #848484;
+}
+.dark-grey {
+	color: #474747;
+}
+.title {
+	font-size: 45px;
+	font-weight: 100;
+	text-transform: uppercase;
+}
+.description {
+	font-size: 18px;
+	font-weight: 300;
+}
+.tiny-icon:before {
+	font-size: 11px;
+}
+
+/*===================================================================================================
+	03. BUTTONS
+===================================================================================================*/
+a.button,
+.button {
+	display: inline-block;
+	border: none;
+	background: #ef5350;
+	border-radius: 2px;
+	color: #f8f8f8;
+	font-size: 13px;
+	font-weight: 300;
+	padding: 8px 24px;
+	margin: 1rem 0;
+	outline: none;
+	text-transform: uppercase;
+	text-decoration: none !important;
+	text-align: center;
+	transition: all .24s ease-in-out 0s;
+}
+.button:hover {
+	background: #f44336;
+}
+/* GHOST */
+.button.ghost {
+	background: transparent;
+	border: 1px solid #f8f8f8;
+}
+.button.ghost:hover,
+.button.ghost:active {
+	background: #ef5350;
+	border-color: #ef5350;
+}
+/* GHOST WHITE */
+.button.ghost.white {
+	background: transparent;
+	border: 1px solid #ef5350;
+	color: #ef5350;
+}
+.button.ghost.white:hover {
+	background: #ef5350;
+	color: #f8f8f8;
+}
+/* DARK */
+.button.dark {
+	background: #474747;
+}
+.button.dark:hover {
+	background: #ef5350;
+}
+.button.round {
+	border-radius: 40px;
+}
+.button.large {
+	padding: 12px 45px;
+	font-size: 14px;
+}
+.button.expand {
+	display: block;
+	width: 100%;
+}
+
+/*===================================================================================================
+	04. HEADER
+===================================================================================================*/
+.site-header {
+	padding: 1rem 0;
+	position: absolute;
+	width: 100%;
+	transition: all 300ms linear;
+	z-index: 1;
+}
+.site-header.fixed-top {
+	background: #f8f8f8;
+	border-bottom: 1px solid #848484;
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 4;
+}
+
+/* TOP HEADER */
+#top-header span {
+	color: #f8f8f8;
+	margin-right: 15px;
+}
+#top-header i:before {
+	position: relative;
+	top: 3px;
+}
+.site-header.fixed-top #top-header {
+	transition: all .24s ease-in-out 0s;
+	display: none;
+}
+/* SOCIAL MEDIA HEADER */
+#social-media-header li {
+	display: inline;
+	margin-left: 11px;
+}
+#social-media-header li a {
+	color: #f8f8f8;
+	transition: all .24s ease-in-out 0s;
+}
+#social-media-header li a:hover,
+#social-media-header li a:active {
+	color: #ef5350;
+}
+/* MAIN HEADER */
+#main-header {
+	padding: 1rem 0;
+}
+a.site-title {
+	color: #f8f8f8;
+	display: inline-block;
+	font-size: 30px;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+.site-header.fixed-top a.site-title {
+	color: #474747;
+}
+
+/* MAIN NAV */
+#main-nav {
+	margin: 0;
+}
+#main-nav li {
+	display: inline;
+	margin-left: 25px;
+}
+#main-nav li a {
+	color: #f8f8f8;
+	text-transform: uppercase;
+	font-size: 13px;
+	display: inline-block;
+}
+.site-header.fixed-top #main-nav li a:not(.button) {
+	color: #474747;
+}
+/* MOBILE MENU */
+#mobile-menu-btn i:before {
+	color: #f8f8f8;
+	font-size: 45px;
+	line-height: 0.8em;
+}
+.site-header.fixed-top #mobile-menu-btn i:before {
+	color: #474747;
+}
+#mobile-menu {
+	display: none;
+	position: fixed;
+	background: #ffffff;
+	height: 100%;
+	top: 0;
+	right: 0;
+	width: 80%;
+	padding: 2rem;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+#mobile-menu-overlay {
+	display: none;
+	position: fixed;
+	background: rgba(0, 0, 0, 0.54);
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+}
+#mobile-menu ul {
+	padding: 0;
+	margin-bottom: 4rem;
+}
+#mobile-menu ul li {
+	list-style: none;
+}
+#mobile-menu ul li a {
+	color: #474747;
+	display: block;
+	padding: 2rem 0;
+	font-size: 14px;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+#mobile-menu ul li a:active,
+#mobile-menu ul li a:hover {
+	color: #ef5350;
+}
+#close-mobile-menu-btn {
+	text-transform: uppercase;
+	margin-bottom: 4rem;
+	font-weight: 300;
+	display: block;
+	color: #ef5350;
+}
+#close-mobile-menu-btn i:before {
+	font-size: 14px;
+	margin-right: 5px;
+}
+
+
+/*===================================================================================================
+	05. HERO
+===================================================================================================*/
+.hero {
+	height: 700px;
+}
+.vegas-wrapper {
+	z-index: 0;
+}
+.dark-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.82);
+	z-index: -1;
+}
+.hero-inner {
+	position: relative;
+	top: 250px;
+	/*top: 50%;*/
+	/*transform: translateY(-50%);*/
+	color: #f8f8f8;
+}
+
+/*===================================================================================================
+	06. ROOMS
+===================================================================================================*/
+.filter-rooms {
+	font-size: 0;
+	padding-left: 0;
+}
+.filter-rooms li.filter-room-btn {
+	font-size: 14px;
+	display: inline-block;
+	cursor: pointer;
+	border: 1px solid #ef5350;
+	margin-left: -1px;
+	padding: 11px 25px;
+	color: #ef5350;
+	transition: all .24s ease-in-out 0s;
+}
+.filter-rooms li.filter-room-btn:hover {
+	background: #ef5350;
+	color: #f8f8f8;
+}
+.room-box .room-type {
+	color: #ef5350;
+	margin-top: 2rem;
+}
+.room-image {
+	position: relative;
+	display: inline-block;
+}
+.room-image a {
+	background: #ef5350;
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	color: #f8f8f8;
+	outline: none;
+	opacity: 0;
+	transition: all .24s ease-in-out 0s;
+}
+.room-image a i:before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 34px;
+}
+.room-image img {
+	margin: 0 auto;
+}
+.room-image:hover a {
+	opacity: .8;
+}
+#room-details-modal .modal-body {
+	padding: 3rem;
+}
+#room-details-modal .close {
+	color: #e5e5e5;
+	line-height: 26px;
+	opacity: 1;
+	text-shadow: none;
+	outline: none;
+	transition: all .24s ease-in-out 0s;
+}
+#room-details-modal .close:hover {
+	color: #f8f8f8;
+}
+#room-images img {
+	width: 100%;
+	transition: all .24s ease-in-out 0s;
+}
+#room-images {
+	background: #111111;
+}
+#room-images:hover img {
+	opacity: .75;
+}
+#room-images .carousel-control {
+	background: none;
+	opacity: 1;
+}
+#room-images .carousel-control span {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	display: inline-block;
+	/*padding: 11px 16px;*/
+}
+/* Meetings & Events */
+#meetings-and-events {
+	position: relative;
+	padding: 11rem 0;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	z-index: 0;
+}
+
+/*===================================================================================================
+	07. CONTACT US
+===================================================================================================*/
+#contact-us ul.list-unstyled li {
+	display: inline-flex;
+	margin-bottom: 2rem;
+	font-weight: 300;
+	width: 100%;
+}
+#contact-us ul.list-unstyled li i {
+	line-height: 1em;
+	padding-right: 2rem;
+	font-weight: 400;
+}
+#contact-us ul.list-unstyled li i:before {
+	font-size: 25px;
+}
+#social-media-contact li a {
+	color: #474747;
+	transition: all .24s ease-in-out 0s;
+}
+#social-media-contact li a:before {
+	font-size: 30px;
+}
+#social-media-contact li a:hover {
+	color: #ef5350;
+}
+#map {
+	width: 100%;
+	height: 500px;
+}
+
+/*===================================================================================================
+	08. MEDIA QUERIES
+===================================================================================================*/
+@media only screen and (max-width : 768px) {
+	.h1, h1 {
+		font-size: 30px !important;
+	}
+	.h2, h2 {
+		font-size: 24px !important;
+	}
+	.h3, h3 {
+		font-size: 18px !important;
+	}
+	.h4, h4 {
+		font-size: 14px !important;
+	}
+	.h5, h5 {
+		font-size: 12px !important;
+	}
+	.h6, h6 {
+		font-size: 10px;
+	}
+	.description {
+		font-size: 15px;
+	}
+	.site-title {
+		font-size: 18px !important;
+	}
+	.text-center-xs,
+	.text-center-sm {
+		text-align: center;
+	}
+	.filter-rooms li.filter-room-btn {
+		padding: 6px 11px;
+	}
+}
